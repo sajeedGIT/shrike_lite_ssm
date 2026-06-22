@@ -1,5 +1,5 @@
 //Full adder coding example
-(*top*)module Full_Adder( (* iopad_external_pin *) input A, 
+(*top*)module full_adder( (* iopad_external_pin *) input A, 
 (* iopad_external_pin *) input B, 
 (* iopad_external_pin *) input Cin, 
 (* iopad_external_pin *) output Sum,  
