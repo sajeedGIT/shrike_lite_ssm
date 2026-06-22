@@ -1,0 +1,44 @@
+# Shrike Examples — Difficulty Reference
+
+🟢 Beginner &nbsp;&nbsp; 🟡 Intermediate &nbsp;&nbsp; 🔴 Advanced
+
+| # | Example | Folder Name | Category | Difficulty | Why |
+|---|---------|-------------|----------|------------|-----|
+| 1 | LED Blink | `led_blink` | Getting Started | 🟢 Beginner | Single output signal, no state |
+| 2 | Breathing LED | `breathing_led` | Getting Started | 🟢 Beginner | Simple PWM counter, single module |
+| 3 | Button Debouncer | `button_debouncer` | Getting Started | 🟢 Beginner | Basic FSM, introduces synchronous logic |
+| 4 | LED PMOD | `pmod_led_blink` | GPIO & I/O | 🟢 Beginner | Direct pin drive, PMOD pinout awareness |
+| 5 | Logic Gates | `logic_gates` | Digital Logic | 🟢 Beginner | Pure combinational, no clock needed |
+| 6 | 4-Bit Counter | `counter_4bit` | Signal & Timing | 🟢 Beginner | Sequential logic, introduces registers |
+| 7 | PMOD Patterns | `pmod_patterns` | GPIO & I/O | 🟡 Intermediate | Sequenced output, simple state machine |
+| 8 | GPIO Extender 8-Pin | `gpio_extender_8pin` | GPIO & I/O | 🟡 Intermediate | FPGA-to-RP2040 IO bridge, bus awareness |
+| 9 | GPIO Extender 14-Pin | `gpio_extender_14pin` | GPIO & I/O | 🟡 Intermediate | FPGA-to-RP2040 IO bridge, wider bus |
+| 10 | I2C LED | `i2c_led` | Communication Protocols | 🟡 Intermediate | I2C state machine, clock stretching awareness |
+| 11 | SPI Loopback LED | `spi_loopback_led` | Communication Protocols | 🟡 Intermediate | SPI shift register, MISO/MOSI routing |
+| 12 | UART LED | `uart_led` | Communication Protocols | 🟡 Intermediate | UART RX framing, baud clock generation |
+| 13 | Morse Blink | `morse_blink` | Communication Protocols | 🟡 Intermediate | UART input, timing/state machine, serial-to-LED translation |
+| 14 | UART ALU | `uart_alu` | Communication Protocols | 🟡 Intermediate | UART + datapath, multi-module design |
+| 15 | PLL Oscillator | `pll_oscillator` | Signal & Timing | 🟡 Intermediate | PLL primitive instantiation, clock domain |
+| 16 | PWM 4-Channel | `pwm_4ch` | Signal & Timing | 🟡 Intermediate | Multi-channel counter, duty cycle control |
+| 17 | 7-Segment Display Clock | `seven_seg_clock` | Signal & Timing | 🟡 Intermediate | BCD conversion, multiplexed display drive |
+| 18 | Ultrasonic Sensor | `ultrasonic_sensor` | Sensors & Peripherals | 🟡 Intermediate | Pulse timing, echo measurement FSM |
+| 19 | WS2812 LED | `ws2812_led` | Sensors & Peripherals | 🟡 Intermediate | Precise bit-bang timing, serial protocol |
+| 20 | Quadrature Decoder | `quadrature_decoder` | Sensors & Peripherals | 🟡 Intermediate | Quadrature decoding, direction detection, signed position/speed tracking |
+| 21 | Protocol Translator | `protocol_translator` | Communication Protocols | 🟡 Intermediate | UART, SPI, and I2C protocol conversion through bridge logic |
+| 22 | ASK Modulator | `ask_modulator` | Signal & Timing | 🔴 Advanced | RF modulation concepts, carrier + data mixing |
+| 23 | Stack Processor | `stack_processor` | Processors & CPUs | 🔴 Advanced | Custom ISA, stack-based execution, SPI host |
+| 24 | Vector-4 CPU | `vector4_cpu` | Processors & CPUs | 🔴 Advanced | Full 4-bit SAP CPU: ALU, PC, registers, decode |
+| 25 | Vector-8 CPU | `vector8_cpu` | Processors & CPUs | 🔴 Advanced | Full 8-bit SAP CPU: wider datapath, more opcodes |
+| 26 | PicoRV32 RISC-V | `shrike_picorv32` | Processors & CPUs | 🔴 Advanced | Full RV32I soft CPU, runtime-programmable over SPI; fits the 1K-LUT fabric |
+
+---
+
+## Summary by Difficulty
+
+| Difficulty | Count | Examples |
+|------------|-------|---------|
+| 🟢 Beginner | 6 | `led_blink`, `breathing_led`, `button_debouncer`, `pmod_led_blink`, `logic_gates`, `counter_4bit` |
+| 🟡 Intermediate | 15 | `pmod_patterns`, `gpio_extender_8pin`, `gpio_extender_14pin`, `i2c_led`, `spi_loopback_led`, `uart_led`, `morse_blink`, `uart_alu`, `pll_oscillator`, `pwm_4ch`, `seven_seg_clock`, `ultrasonic_sensor`, `ws2812_led`, `quadrature_decoder`,`protocol_translator` |
+| 🔴 Advanced | 5 | `ask_modulator`, `stack_processor`, `vector4_cpu`, `vector8_cpu`, `shrike_picorv32` |
+
+---

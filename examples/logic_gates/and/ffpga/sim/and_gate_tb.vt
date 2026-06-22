@@ -1,0 +1,43 @@
+`timescale 1ns / 1ps
+
+module and_gate_tb;
+
+    // Inputs are declared as registers
+    reg a;
+    reg b;
+    // Outputs are declared as wires
+    wire LED;
+
+    // Instantiate the Unit Under Test (UUT)
+    and_gate uut (
+        .a(a),
+        .b(b),
+        .LED(LED)
+    );
+
+    initial begin
+        // Generate the VCD logging file for GTKWave
+        $dumpfile("and_gate_tb.vcd");
+        $dumpvars(0, and_gate_tb);
+
+        // State 00
+        a = 0; b = 0;
+        #10;
+        
+        // State 01
+        a = 0; b = 1;
+        #10;
+        
+        // State 10
+        a = 1; b = 0;
+        #10;
+        
+        // State 11
+        a = 1; b = 1;
+        #10;
+
+        // Finish simulation
+        $finish;
+    end
+
+endmodule

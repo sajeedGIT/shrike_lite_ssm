@@ -1,0 +1,88 @@
+// Full Chip Testbench template
+
+`timescale 1ns / 1ps
+
+module SLG47910V_led_blink_tb;
+
+  reg  i_vss;
+  reg  i_vddc;
+  reg  i_vddio;
+  reg  r_nsleep;
+  reg  r_nrst;
+  wire i_nsleep;
+  wire i_nrst;
+  wire io_gpio0;
+  wire io_gpio1;
+  wire io_gpio2;
+  wire io_gpio3;
+  wire io_gpio4;
+  wire io_gpio5;
+  wire io_gpio6;
+  wire io_gpio7;
+  wire io_gpio8;
+  wire io_gpio9;
+  wire io_gpio10;
+  wire io_gpio11;
+  wire io_gpio12;
+  wire io_gpio13;
+  wire io_gpio14;
+  wire io_gpio15;
+  wire io_gpio16;
+  wire io_gpio17;
+  wire io_gpio18;
+
+  assign i_nsleep = r_nsleep;
+  assign i_nrst   = r_nrst;
+
+  SLG47910V_led_blink dut(
+    .i_vss     (i_vss),
+    .i_vddc    (i_vddc),
+    .i_vddio   (i_vddio),
+    .i_nsleep  (i_nsleep),
+    .i_nrst    (i_nrst),
+    .io_gpio0  (io_gpio0),
+    .io_gpio1  (io_gpio1),
+    .io_gpio2  (io_gpio2),
+    .io_gpio3  (io_gpio3),
+    .io_gpio4  (io_gpio4),
+    .io_gpio5  (io_gpio5),
+    .io_gpio6  (io_gpio6),
+    .io_gpio7  (io_gpio7),
+    .io_gpio8  (io_gpio8),
+    .io_gpio9  (io_gpio9),
+    .io_gpio10 (io_gpio10),
+    .io_gpio11 (io_gpio11),
+    .io_gpio12 (io_gpio12),
+    .io_gpio13 (io_gpio13),
+    .io_gpio14 (io_gpio14),
+    .io_gpio15 (io_gpio15),
+    .io_gpio16 (io_gpio16),
+    .io_gpio17 (io_gpio17),
+    .io_gpio18 (io_gpio18)
+  );
+
+  initial begin
+    $dumpfile("SLG47910V_led_blink_tb.vcd");
+    $dumpvars(0, SLG47910V_led_blink_tb);
+    
+    i_vss    = 0;
+    i_vddc   = 0;
+    i_vddio  = 0;
+    r_nsleep = 0;
+    r_nrst   = 0;
+
+    #100
+
+    // Power up
+    i_vddc   = 1;
+    i_vddio  = 1;
+    r_nsleep = 1;
+    r_nrst   = 1;
+
+    // User stimulus
+
+    // End simulation
+    $finish;
+  end
+
+endmodule

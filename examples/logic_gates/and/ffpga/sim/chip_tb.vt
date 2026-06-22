@@ -1,0 +1,71 @@
+// Full Chip Testbench template
+
+`timescale 1ns / 1ps
+
+module and_gate_tb;
+
+  reg  a;
+  reg  b;
+  reg  i_vddio;
+  reg  r_nsleep;
+  reg  r_nrst;
+  wire i_nsleep;
+  wire i_nrst;
+  wire io_gpio0;
+  wire io_gpio1;
+  wire io_gpio2;
+  wire io_gpio3;
+  wire io_gpio4;
+  wire io_gpio5;
+  wire io_gpio6;
+  wire io_gpio7;
+  wire io_gpio8;
+  wire io_gpio9;
+  wire io_gpio10;
+  wire io_gpio11;
+  wire io_gpio12;
+  wire io_gpio13;
+  wire io_gpio14;
+  wire io_gpio15;
+  wire LED;
+  wire io_gpio17;
+  wire io_gpio18;
+  
+  assign i_nsleep = r_nsleep;
+  assign i_nrst   = r_nrst;
+
+  and_gate dut(
+    .LED (LED),
+    .a (a),
+    .b (b)
+  );
+
+  initial begin
+    $dumpfile("and_gate_tb.vcd");
+    $dumpvars(0, and_gate_tb);
+    
+    a    = 0;
+    b   = 0;
+    
+
+    #10
+
+    // Power up
+    a   = 0;
+    b  = 1;
+    #10
+    
+    a = 1;
+    b= 0;
+    #10
+    
+    a = 1;
+    b=1;
+    #10
+    // User stimulus
+
+    // End simulation
+    $finish;
+  end
+
+endmodule
