@@ -1,4 +1,4 @@
-(*top*)module Full_Adder( 
+(*top*) module Half_Adder( 
 (* iopad_external_pin *) input A, 
 (* iopad_external_pin *) input B, 
 (* iopad_external_pin *) output Sum,
