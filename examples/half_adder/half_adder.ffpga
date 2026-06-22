@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GPDProject version="41" oldestCompatibleVersion="32" GPDVersion="6.54.002" lastChange="22 Jun 2026 13:31:32" projectChecksumState="1" projectChecksum="d6967d45">
+<GPDProject version="41" oldestCompatibleVersion="32" GPDVersion="6.54.002" lastChange="22 Jun 2026 13:50:38" projectChecksumState="1" projectChecksum="8d2e81af">
     <Metadata>
         <LegalNotice>This Design was generated using Renesas' proprietary Go Configure Software Hub and is provided for use solely in connection with Renesas GreenPAK integrated circuits. Any unauthorized use, reproduction, distribution, or manufacture of this Design is prohibited. This Design is provided 'AS IS' without warranties of any kind.</LegalNotice>
     </Metadata>
@@ -648,7 +648,7 @@
         <openedTabs>
             <openedTab>main.v</openedTab>
             <openedTab>I/O Planner</openedTab>
-            <openedTab>chip_tb.vt</openedTab>
+            <openedTab>half_adder_tb.vt</openedTab>
         </openedTabs>
         <pipelineStagesStates>
             <pipelineStageState>
@@ -666,8 +666,7 @@
             </scr>
             <lib/>
             <sim>
-                <module filename="chip_tb.vt"/>
-                <module filename="chip_tb_copy.vt"/>
+                <module filename="half_adder_tb.vt"/>
             </sim>
             <netlists/>
             <timing-constraints/>
