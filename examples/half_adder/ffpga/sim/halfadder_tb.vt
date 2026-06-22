@@ -1,0 +1,29 @@
+`timescale 1ns / 1ps
+
+module halfadder_tb;
+
+    reg A;
+    reg B;
+    wire Sum;
+    wire Cout;
+
+    // Device Under Test
+    half_adder dut(
+        .A(A),
+        .B(B),
+        .Sum(Sum),
+        .Cout(Cout)
+    );
+    initial begin
+        $dumpfile("halfadder_tb.vcd");
+        $dumpvars(0, halfadder_tb);
+
+        A = 0; B = 0; #10;
+        A = 0; B = 1; #10;
+        A = 1; B = 0; #10;
+        A = 1; B = 1; #10;
+
+        $finish;
+    end
+
+endmodule
