@@ -1,39 +1,51 @@
-// Custom testbench
-
 `timescale 1ns / 1ps
 
 module half_adder_tb;
 
-reg A;
-reg B;
-wire Sum;
-wire Cout;
-Half_Adder dut(
-.A(A),
-.B(B),
-.Sum(Sum),
-.Cout(Cout)
-)
-  initial begin
-    $dumpfile ("half_adder_tb.vcd");
-    $dumpvars (0, half_adder_tb);
-   A = 0;
-   B = 0;
-   #10;
-   
-   A = 0;
-   B = 1;
-   #10;
-   
-   A = 1;
-   B = 0;
-   #10;
-   
-   A = 1;
-   B = 1;
-   #10;
-   
-    $finish;
-  end
+    // Testbench inputs
+    reg A;
+    reg B;
+
+    // Testbench outputs
+    wire Sum;
+    wire Sum_oe;
+    wire Cout;
+    wire Cout_oe;
+
+    // Device Under Test (DUT)
+    half_adder dut (
+        .A      (A),
+        .B      (B),
+        .Sum    (Sum),
+        .Cout   (Cout)
+         );
+
+    // Test stimulus
+    initial begin
+
+        // Create waveform file
+        $dumpfile("half_adder_tb.vcd");
+        $dumpvars(0, half_adder_tb);
+
+        // Test 1: A=0, B=0
+        A = 1'b0; B = 1'b0;
+        
+        #10;
+       // Test 2: A=0, B=1
+        A = 1'b0; B = 1'b1;
+        
+        #10;
+        // Test 3: A=1, B=0
+        A = 1'b1; B = 1'b0;
+        
+        #10;
+        // Test 4: A=1, B=1
+        A = 1'b1; B = 1'b1;
+        #10;
+
+        // End simulation
+        $finish;
+
+    end
 
 endmodule

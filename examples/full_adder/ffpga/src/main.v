@@ -13,8 +13,8 @@ assign Sum_oe = 1;
 assign Cout_oe = 1; 
 
 //port mapping  
-Half_Adder   Half_Adder_1 (.x(A), .y(B), .sum(n2) , .carry(n1));
+Half_Adder   Half_Adder_1 (.sum(n2) , .carry(n1), .x(A), .y(B));
 Half_Adder   Half_Adder_2 (.sum(Sum), .carry(n3), .x(n2) , .y(Cin)); 
-OR_Gate      OR_Gate_1(.a(n1), .b(n3),.c(Cout));
+OR_Gate      OR_Gate_1(.c(Cout), .a(n1), .b(n3));
 
 endmodule
